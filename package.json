@@ -1,0 +1,21 @@
+{
+  "name": "start-new-project",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.19",
+    "typescript": "^4.8.3"
+  },
+  "scripts": {
+    "watch": "tsc -w",
+    "dev": "nodemon --inspect dist/main.js",
+    "build": "tsc",
+    "start": "node dist/main.js"
+  }
+}
