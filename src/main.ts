@@ -4,13 +4,14 @@ import { ExeptionFilter } from './errors/exeption.filter';
 import { IExeptionFilter } from './errors/exeption.filter.interface';
 import { LoggerService } from './logger/logger.service';
 import { ILogger } from './logger/logger.interface';
-import { UserController } from './users/users.controler';
+import { UserController } from './users/users.controller';
 import { TYPES } from './types';
+import { IUserController } from './users/users.controller.interface';
 
 const appBindings = new ContainerModule((bind: interfaces.Bind) => {
   bind<ILogger>(TYPES.ILogger).to(LoggerService);
-  bind<IExeptionFilter>(TYPES.ExeptionFilter).to(ExeptionFilter);
-  bind<UserController>(TYPES.UserController).to(UserController);
+  bind<IExeptionFilter>(TYPES.IExeptionFilter).to(ExeptionFilter);
+  bind<IUserController>(TYPES.IUserController).to(UserController);
   bind<App>(TYPES.Aplication).to(App);
 });
 
