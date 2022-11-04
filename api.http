@@ -9,5 +9,11 @@ Content-type: application/json
 
 ###
 POST http://localhost:3000/users/register
+Content-type: application/json
 
-###
+{
+    "name":"John",
+    "email":"john@gemail.com",
+    "password":"pa$$w0rd"
+}
+
