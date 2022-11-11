@@ -9,12 +9,15 @@ import { TYPES } from './types';
 import { IUserController } from './users/users.controller.interface';
 import { UserService } from './users/users.service';
 import { IUserService } from './users/users.service.interface';
+import { IConfigService } from './config/config.service.interface';
+import { ConfigService } from './config/config.service';
 
 const appBindings = new ContainerModule((bind: interfaces.Bind) => {
-	bind<ILogger>(TYPES.ILogger).to(LoggerService);
+	bind<ILogger>(TYPES.ILogger).to(LoggerService).inSingletonScope();
 	bind<IExeptionFilter>(TYPES.IExeptionFilter).to(ExeptionFilter);
 	bind<IUserController>(TYPES.IUserController).to(UserController);
 	bind<IUserService>(TYPES.UserService).to(UserService);
+	bind<IConfigService>(TYPES.ConfigService).to(ConfigService).inSingletonScope();
 	bind<App>(TYPES.Aplication).to(App);
 });
 
