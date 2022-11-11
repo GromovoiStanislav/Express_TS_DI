@@ -12,8 +12,8 @@ POST http://localhost:3000/users/register
 Content-type: application/json
 
 {
-    "name":"John",
-    "email":"john@gemail.com",
+    "name":"Piter",
+    "email":"piter@gemail.com",
     "password":"pa$$w0rd"
 }
 
