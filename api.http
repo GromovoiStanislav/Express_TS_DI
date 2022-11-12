@@ -8,6 +8,11 @@ Content-type: application/json
 }
 
 ###
+GET http://localhost:3000/users/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpdGVyQGdlbWFpbC5jb20iLCJpYXQiOjE2NjgyMzI1OTl9.qJx5CJfxJPg7KVCOujOeyTrKhS2D54N9OzY6GjJwTKc
+
+
+###
 POST http://localhost:3000/users/register
 Content-type: application/json
 

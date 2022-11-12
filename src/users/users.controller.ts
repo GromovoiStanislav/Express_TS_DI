@@ -22,9 +22,9 @@ export class UserController extends BaseController implements IUserController {
 		) {
 		super(LoggerService);
 		this.bindRoutes([
-			{ path: '/login', method: 'post', func: this.login },
 			{ path: '/register', method: 'post', func: this.register, middlewares: [new ValidateMiddleware(UserRegisterDto)], },
 			{ path: '/login', method: 'post', func: this.login, middlewares: [new ValidateMiddleware(UserLoginDto)], },
+			{ path: '/info', method: 'get', func: this.info, middlewares: [], },
 		]);
 	}
 
@@ -43,6 +43,10 @@ export class UserController extends BaseController implements IUserController {
 			return next(new HTTPError(422, 'Такой пользователь уже существует'));
 		}
 		this.ok(res, { email: result.email, id:result.id });
+	}
+
+	async info({ user }: Request, res: Response, next: NextFunction): Promise<void> {
+		this.ok(res, { email:user });
 	}
 
 	private signJWT(email: string, secret: string): Promise<string> {
