@@ -22,7 +22,8 @@ export class AuthMiddleware implements IMiddleware {
                 console.log('err',req.headers.authorization)
                 next();
             }
+        } else {
+            next();
         }
-        next();
     }
 }
