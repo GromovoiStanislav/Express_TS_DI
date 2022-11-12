@@ -4,7 +4,7 @@ Content-type: application/json
 
 {
     "email":"piter@gemail.com",
-    "password":"pa$$w0rd1"
+    "password":"pa$$w0rd"
 }
 
 ###
