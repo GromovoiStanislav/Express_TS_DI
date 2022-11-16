@@ -4,7 +4,7 @@ const config: Config.InitialOptions = {
 	verbose: true,
 	preset: 'ts-jest',
 	testRegex: '.e2e-spec.ts$',
-    rootDir: './tests',
+    //rootDir: './tests',
 };
 
 export default config;
